@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+</head>
+<body>
+<header>
+    <a th:href="@{records}">record</a>
+    <br>
+</header>
+<section>
+    <div class="container">
+        <div class="row">
+            <div id="title">
+                <h1>All user records</h1>
+            </div>
+            <table id="allRecords" class="table table-striped">
+                <thead>
+                <tr>
+                    <th width="70%">User Id</th>
+                    <th>Text</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr class="result" data-th-each="record : ${records}">
+                    <td>[[${record.id}]]</td>
+                    <td>[[${record.text}]]</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>
